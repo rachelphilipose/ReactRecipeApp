@@ -15,7 +15,7 @@ export default function App() {
      // <Text style={styles.baseText}>this is our super cool awesome app</Text>
      // <StatusBar style="auto"> THIS IS THE STAT BAR</StatusBar>
     // </View>
-    <Text> HELLO</Text>
+    <Text> HELLOooo</Text>
    // <HomePage/>
 
   );
