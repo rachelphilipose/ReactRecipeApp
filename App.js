@@ -1,15 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import React, {useState} from 'react';
+import HomePage from './screens/Home/home';
+import { createStackNavigator } from '@react-navigation/stack'; //Insert screens into a stack
+import { NavigationContainer } from '@react-navigation/native'; //contains navigator and screen
+
 
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.titleText}> HELLO THERE</Text>
-      <Text style={styles.baseText}>this is our super cool awesome app</Text>
-      <StatusBar style="auto"> THIS IS THE STAT BAR</StatusBar>
-    </View>
+    //<View style={styles.container}>
+      //<Text style={styles.titleText}> HELLO THERE</Text>
+     // <Text style={styles.baseText}>this is our super cool awesome app</Text>
+     // <StatusBar style="auto"> THIS IS THE STAT BAR</StatusBar>
+    // </View>
+
+    <HomePage/>
+
   );
 }
 
