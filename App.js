@@ -1,19 +1,25 @@
 import 'react-native-gesture-handler';
+//import { createStackNavigator } from '@react-navigation/stack';
+//import { NavigationContainer } from '@react-navigation/native'; 
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Pressable} from 'react-native';
 import React, {useState} from 'react';
 import HomePage from './screens/Home/home';
-import { createStackNavigator } from 'node_modules/@react-navigation/stack'; //Insert screens into a stack
-import { NavigationContainer } from '@react-navigation/native'; //contains navigator and screen
+
 
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.titleText}> HELLO THERE</Text>
-    <Text style={styles.baseText}>this is our super cool awesome app</Text>
-      <StatusBar style="auto"> THIS IS THE STAT BAR</StatusBar>
+      <Text style={styles.titleText}> Welcome to "Project" </Text>
+    <Text style={styles.baseText}> Made for and by hungry college students, 
+    this app will solve your cooking problems by helping you choose what to cook! </Text>
+
+    <Pressable style= {styles.button}>
+        <Text style= {styles.innerText}> Let's Get Started</Text>
+    </Pressable>
+      <StatusBar style="auto"> </StatusBar>
      </View>
 
    // <HomePage/>
@@ -22,13 +28,27 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: 'black',
+  },
   titleText: {
     color: 'red',
     fontSize: 30,
+    fontFamily: 'serif',
   },
   baseText: {
     color: 'grey',
     fontSize: 15,
+  },
+  innerText: {
+    color: 'white',
+    fontFamily: 'serif',
   },
   container: {
     flex: 1,
