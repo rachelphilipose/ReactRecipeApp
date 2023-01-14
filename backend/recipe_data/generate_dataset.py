@@ -15,6 +15,8 @@ def remove_tokens(string):
 
 # name, id, minutes, contributer_id, submitted, tags, nutrition, n_steps, steps, description
 count = 20
+print("hello world")
+
 with open(filename, newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
     for row in reader:
