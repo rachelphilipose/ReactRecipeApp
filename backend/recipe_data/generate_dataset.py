@@ -5,7 +5,7 @@ import os
 import csv
 
 current_path = os.path.dirname(os.path.abspath(__file__))
-filename = os.path.join(current_path, 'RAW_recipes.csv')
+filename = os.path.join(current_path, "RAW_recipes.csv")
 
 def remove_tokens(string):
     string = string.replace("'", "")
@@ -14,11 +14,10 @@ def remove_tokens(string):
     return string
 
 # name, id, minutes, contributer_id, submitted, tags, nutrition, n_steps, steps, description
-count = 20
-print("hello world")
-
-with open(filename, newline='') as csvfile:
-    reader = csv.reader(csvfile, delimiter=',')
+count = 50000
+recipe_array = []
+with open(filename, newline="") as csvfile:
+    reader = csv.reader(csvfile, delimiter=",")
     for row in reader:
         # drop any recipes with missing data
         if (len(row) != 12):
@@ -27,25 +26,25 @@ with open(filename, newline='') as csvfile:
         if (row[0] == "name"):
             continue
 
-        
         ingredients = remove_tokens(row[10])
-        print("INGREDIENTS: " + ingredients)
+        recipe_array.append("INGREDIENTS: " + ingredients)
 
         recipe_name = row[0]
-        print("NAME: " + row[0])
+        recipe_array.append("\nNAME: " + row[0])
 
         recipe_minutes = row[2]
-        print("MINUTES: " + recipe_minutes)
-
-        recipe_tags = remove_tokens(row[5])
-        print("TAGS: " + recipe_tags)
+        recipe_array.append("\nMINUTES: " + recipe_minutes)
 
         steps = remove_tokens(row[8])
-        print("STEPS: " + steps)
+        recipe_array.append("\nSTEPS: " + steps)
 
-        print("\n\n")
-        print("--")
-        print("\n\n")
+        recipe_array.append("\n--\n")
         count -= 1
         if count == 0:
             break
+
+with open("backend/recipe_data/recipes.txt", "w") as f:
+    for line in recipe_array:
+        f.write(line)
+
+f.close()
