@@ -13,18 +13,19 @@ const Stack = createStackNavigator();
 function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.titleText}> Welcome to "Project" </Text>
-    <Text style={styles.baseText}> Made for and by hungry college students, 
-    this app will solve your cooking problems by helping you choose what to cook! </Text>
-
+      
     <Pressable style= {styles.button} 
     onPress={() => navigation.navigate('InputOutput')} >
         <Text style= {styles.innerText}> Let's Get Started</Text>
     </Pressable>
 
+    <Text style={styles.baseText}> Made for and by hungry college students, 
+    this app will solve your cooking problems by helping you choose what to cook! </Text>
 
-
+    
       <StatusBar style="auto"> </StatusBar>
+      <Text style={styles.titleText}> Welcome to "Project" </Text> 
+
      </View>
 
   );
@@ -61,7 +62,6 @@ export default function App() {
 
 
 
-
 const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
@@ -72,23 +72,36 @@ const styles = StyleSheet.create({
     elevation: 3,
     backgroundColor: 'black',
   },
+
   titleText: {
-    color: 'red',
+    
+    color: '#272EA0',
     fontSize: 30,
     fontFamily: 'serif',
+    alignItems: 'start',
+    justifyContent: 'center',
+    
+
   },
   baseText: {
+    paddingVertical: 20,
     color: 'grey',
     fontSize: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   innerText: {
     color: 'white',
     fontFamily: 'serif',
+    
+
   },
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#D6D7E9',
     alignItems: 'center',
     justifyContent: 'center',
+    
+    
   },
 });
